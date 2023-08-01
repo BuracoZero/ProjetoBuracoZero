@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
-//adicionar import das screens
+import { ScreenCadastrar, ScreenLogin } from "../screens";
 import { TabNavigation } from './tab.navigation'
 type LoginStackParamList = {
   Login: undefined
@@ -17,7 +17,8 @@ export function LoginNavigation() {
   const Stack = createStackNavigator<LoginStackParamList>();
   return (
     <Stack.Navigator>
-    
+      <Stack.Screen name="Login" component={ScreenLogin} />
+      <Stack.Screen name="Cadastrar" component={ScreenCadastrar} />
       <Stack.Screen name="Tab" component={TabNavigation} />
     </Stack.Navigator>
   );

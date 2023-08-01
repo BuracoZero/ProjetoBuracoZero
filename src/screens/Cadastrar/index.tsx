@@ -1,7 +1,7 @@
 import React from "react";
 import { View, KeyboardAvoidingView, Text } from "react-native"
 import {styles} from "./styles"
-import { MaterialCommunityIcons, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { AntDesign, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { TextInput } from "react-native-gesture-handler";
 import { colors } from "../../styles/colors";
 import { ComponentButtonInterface } from "../../components";
@@ -21,9 +21,9 @@ export function Cadastrar({navigation}:LoginTypes) {
                     />
                 </View>
                 <View style={styles.formRow}>
-                <MaterialCommunityIcons name="email" size={24} color="black" />
+                <AntDesign name="idcard" size={24} color="black" />
                 <TextInput
-                    placeholder="E-mail"
+                    placeholder="CPF"
                     placeholderTextColor={colors.black}
                     keyboardType="email-address"
                     autoCapitalize="none"
