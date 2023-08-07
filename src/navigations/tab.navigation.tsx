@@ -1,10 +1,11 @@
 import React from 'react';
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {ScreenLogin} from "../screens"
+import {ScreenLogin, ScreenMapa} from "../screens"
 import { colors } from '../styles/colors';
-import { Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
+import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 type TabParamList ={
   Login: undefined
+  Mapa: undefined
 }
 type TabScreenNavigationProp = BottomTabNavigationProp<TabParamList, 'Login'>
 export type TabTypes = {
@@ -15,11 +16,18 @@ export function TabNavigation() {
   return (
     <Tab.Navigator 
       screenOptions={{
-        tabBarInactiveBackgroundColor:colors.secondary,
+        tabBarInactiveBackgroundColor:colors.third,
         tabBarActiveBackgroundColor: colors.primary, 
         tabBarActiveTintColor: colors.white
       }}
     >
+      <Tab.Screen name="Mapa" component={ScreenMapa}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome5 name="map-marked-alt" size={24} color="white" />
+          )
+        }}
+      />
       <Tab.Screen name="Login" component={ScreenLogin} 
         options={{
           tabBarIcon: () => (
@@ -27,7 +35,8 @@ export function TabNavigation() {
           )
         }}
       />
-
+      
+    
     </Tab.Navigator>
   );
 }

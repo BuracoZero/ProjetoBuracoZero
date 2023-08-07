@@ -1,12 +1,12 @@
 import React from 'react';
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
-import { ScreenCadastrar, ScreenLogin } from "../screens";
+import { ScreenCadastrar, ScreenLogin, ScreenMapa } from "../screens";
 import { TabNavigation } from './tab.navigation'
 type LoginStackParamList = {
   Login: undefined
   Cadastrar: undefined
   Tab: undefined
-  Drawer: undefined;
+  Mapa: undefined
 };
 type LoginScreenNavigation = StackNavigationProp<LoginStackParamList, 'Login'>
 export type LoginTypes = {
@@ -17,9 +17,10 @@ export function LoginNavigation() {
   const Stack = createStackNavigator<LoginStackParamList>();
   return (
     <Stack.Navigator>
+      <Stack.Screen name="Tab" component={TabNavigation} />
       <Stack.Screen name="Login" component={ScreenLogin} />
       <Stack.Screen name="Cadastrar" component={ScreenCadastrar} />
-      <Stack.Screen name="Tab" component={TabNavigation} />
+      <Stack.Screen name="Mapa" component={ScreenMapa} />
     </Stack.Navigator>
   );
 }
