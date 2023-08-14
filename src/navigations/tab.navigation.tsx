@@ -1,11 +1,13 @@
 import React from 'react';
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {ScreenLogin, ScreenMapa} from "../screens"
+import {ScreenLogin, ScreenMapa, ScreenSuasDenuncias} from "../screens"
 import { colors } from '../styles/colors';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 type TabParamList ={
   Login: undefined
   Mapa: undefined
+  Cadastrar: undefined
+  SuasDenuncias: undefined
 }
 type TabScreenNavigationProp = BottomTabNavigationProp<TabParamList, 'Login'>
 export type TabTypes = {
@@ -28,6 +30,13 @@ export function TabNavigation() {
           )
         }}
       />
+      <Tab.Screen name="SuasDenuncias" component={ScreenSuasDenuncias} 
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome5 name="journal-whills" size={24} color="white" />
+          )
+        }}
+      />
       <Tab.Screen name="Login" component={ScreenLogin} 
         options={{
           tabBarIcon: () => (
@@ -35,6 +44,7 @@ export function TabNavigation() {
           )
         }}
       />
+       
       
     
     </Tab.Navigator>
