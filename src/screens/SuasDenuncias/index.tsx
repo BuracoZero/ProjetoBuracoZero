@@ -31,6 +31,7 @@ export function SuasDenuncias({navigation}:LoginTypes) {
             
                 <ComponentButtonInterface title="Editar" type="third" onPressI={()=>{navigation.navigate("Tab")}}/> 
                 <ComponentButtonInterface title="Remover" type="primary" onPressI={()=>navigation.navigate("Cadastrar")}/>
+                <ComponentButtonInterface title="+" type="third" onPressI={()=>{navigation.navigate("CadastroDenuncias")}}/> 
             </KeyboardAvoidingView>
         </View>
     )

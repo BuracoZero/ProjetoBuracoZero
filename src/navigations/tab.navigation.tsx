@@ -1,6 +1,6 @@
 import React from 'react';
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {ScreenLogin, ScreenMapa, ScreenSuasDenuncias} from "../screens"
+import {ScreenLogin, ScreenMapa, ScreenSuasDenuncias,} from "../screens"
 import { colors } from '../styles/colors';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 type TabParamList ={
@@ -8,6 +8,8 @@ type TabParamList ={
   Mapa: undefined
   Cadastrar: undefined
   SuasDenuncias: undefined
+  CadastroDenuncias: undefined
+  Camera: undefined
 }
 type TabScreenNavigationProp = BottomTabNavigationProp<TabParamList, 'Login'>
 export type TabTypes = {

@@ -68,4 +68,5 @@ export function Mapa() {
         </MapView>
     </View>
   );
+
 }

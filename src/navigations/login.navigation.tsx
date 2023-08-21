@@ -1,13 +1,15 @@
 import React from 'react';
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
-import { ScreenCadastrar, ScreenLogin, ScreenMapa, ScreenSuasDenuncias } from "../screens";
+import { ScreenCadastrar, ScreenCadastroDenuncias, ScreenLogin, ScreenMapa, ScreenSuasDenuncias } from "../screens";
 import { TabNavigation } from './tab.navigation'
 type LoginStackParamList = {
   Login: undefined
   Cadastrar: undefined
   SuasDenuncias: undefined
+  CadastroDenuncias: undefined
   Tab: undefined
   Mapa: undefined
+ 
 };
 type LoginScreenNavigation = StackNavigationProp<LoginStackParamList, 'Login'>
 export type LoginTypes = {
@@ -23,6 +25,10 @@ export function LoginNavigation() {
       <Stack.Screen name="Cadastrar" component={ScreenCadastrar} />
       <Stack.Screen name="Mapa" component={ScreenMapa} />
       <Stack.Screen name="SuasDenuncias" component={ScreenSuasDenuncias} />
+      <Stack.Screen name="CadastroDenuncias" component={ScreenCadastroDenuncias} />
+     
+      
+
     </Stack.Navigator>
   );
 }
