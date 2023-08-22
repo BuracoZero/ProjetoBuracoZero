@@ -3,8 +3,6 @@ import { colors } from '../../styles/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
     },
     title:{
         fontSize: 30,
@@ -33,6 +31,11 @@ export const styles = StyleSheet.create({
         padding: 10,
         width: "70%"
 
+    },
+    button: {
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        padding: 389,
     }
 })
 export default styles

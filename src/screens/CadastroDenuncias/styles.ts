@@ -3,13 +3,11 @@ import { colors } from '../../styles/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
+        flexDirection:'column'
     },
     title:{
         fontSize: 30,
         fontWeight: "bold",
-        textAlign: "center",
         color: colors.black
     },
     formRow: {
@@ -19,8 +17,16 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: colors.primary,
         borderRadius: 5
-        
-
+    },
+    form: {
+        margin: 10,
+        flexDirection:"row",
+        alignItems:'baseline',
+        width: 390,
+        height: 300,
+        borderWidth: 1,
+        borderColor: colors.primary,
+        borderRadius: 5
     },
     icon: {
         fontSize: 28,

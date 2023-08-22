@@ -5,14 +5,14 @@ import { styles } from './styles'
 export interface IBInterface extends TouchableOpacityProps {
     onPressI: () => void
     title: string
-    type: 'primary' | 'secondary' | 'third'
+    type: 'primary' | 'secondary' | 'fourth'
 }
 export function ButtonInterface({ onPressI, title, type, ...rest }: IBInterface) {
     return (
             <TouchableOpacity style={
                 type== 'primary' ? styles.buttonPrimary:
                 type== 'secondary' ? styles.buttonSecondary:
-                styles.buttonThird
+                styles.buttonFourth
             } onPress={onPressI} 
                 {...rest}
             >

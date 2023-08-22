@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
         margin: 10,
     },
-    buttonThird: {
-        backgroundColor: colors.primary,
+    buttonFourth: {
+        backgroundColor: colors.fourth,
         borderRadius: 5,
         margin: 10,
     },
