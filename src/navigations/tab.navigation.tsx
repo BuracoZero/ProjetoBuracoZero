@@ -1,6 +1,6 @@
 import React from 'react';
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {ScreenLogin, ScreenMapa, ScreenSuasDenuncias,} from "../screens"
+import {ScreenLogin, ScreenMapa, ScreenSuasDenuncias, ScreenCadastrar} from "../screens"
 import { colors } from '../styles/colors';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 type TabParamList ={

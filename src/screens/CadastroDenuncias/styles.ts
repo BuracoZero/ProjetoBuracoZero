@@ -10,6 +10,11 @@ export const styles = StyleSheet.create({
         fontWeight: "bold",
         color: colors.black
     },
+    buttonRow:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
     formRow: {
         margin: 10,
         flexDirection:"row",

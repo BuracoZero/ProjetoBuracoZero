@@ -4,7 +4,7 @@ import {styles} from "./styles";
 import { AntDesign, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { colors } from "../../styles/colors";
 import {TextInput} from "react-native-gesture-handler";
-import { ComponentButtonInterface } from "../../components";
+import { ComponentButtonInterface, ComponentButtonSalvar } from "../../components";
 import {LoginTypes} from "../../navigations/login.navigation"
 import { Camera, CameraCapturedPicture, CameraType,FaceDetectionResult } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library'
@@ -42,8 +42,12 @@ export function CadastroDenuncias({navigation}:LoginTypes) {
                 />
             </View>
           </KeyboardAvoidingView>
-          <MaterialCommunityIcons name="camera-plus-outline" size={40} color="black" />
+          <MaterialCommunityIcons name="camera-plus-outline" size={40} color="black" onPress={() => navigation.navigate("Camera")}/>
           <Text>Escolha uma imagem</Text>
+          <View style={styles.buttonRow}>
+                    <ComponentButtonSalvar title="Cancelar" type="fourth" onPressI={()=>navigation.navigate("Cadastrar")}/>
+                    <ComponentButtonSalvar title="Salvar" type="secondary" onPressI={()=>{navigation.navigate("Tab")}}/> 
+                </View>
         </View>
   )
 }

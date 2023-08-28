@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
-import { ScreenCadastrar, ScreenCadastroDenuncias, ScreenLogin, ScreenMapa, ScreenSuasDenuncias } from "../screens";
+import { ScreenCadastrar, ScreenCadastroDenuncias, ScreenCamera, ScreenLogin, ScreenMapa, ScreenSuasDenuncias } from "../screens";
 import { TabNavigation } from './tab.navigation'
 type LoginStackParamList = {
   Login: undefined
@@ -9,7 +9,7 @@ type LoginStackParamList = {
   CadastroDenuncias: undefined
   Tab: undefined
   Mapa: undefined
- 
+  Camera: undefined
 };
 type LoginScreenNavigation = StackNavigationProp<LoginStackParamList, 'Login'>
 export type LoginTypes = {
@@ -26,7 +26,7 @@ export function LoginNavigation() {
       <Stack.Screen name="Mapa" component={ScreenMapa} />
       <Stack.Screen name="SuasDenuncias" component={ScreenSuasDenuncias} />
       <Stack.Screen name="CadastroDenuncias" component={ScreenCadastroDenuncias} />
-     
+      <Stack.Screen name="Camera" component={ScreenCamera} />
       
 
     </Stack.Navigator>

@@ -4,7 +4,7 @@ import {styles} from "./styles";
 import { AntDesign, Ionicons, Entypo } from '@expo/vector-icons';
 import { colors } from "../../styles/colors";
 import {TextInput} from "react-native-gesture-handler";
-import { ComponentButtonDenuncia, ComponentButtonInterface } from "../../components";
+import { ComponentButtonDenuncia, ComponentButtonInterface, ComponentButtonSalvar } from "../../components";
 import {LoginTypes} from "../../navigations/login.navigation"
 
 
@@ -13,11 +13,17 @@ export function SuasDenuncias({navigation}:LoginTypes) {
         <View style={styles.container}>
             <KeyboardAvoidingView>
                 <Text style={styles.title}>Suas Denúncias</Text>
-                <ComponentButtonInterface title="Editar" type="secondary" onPressI={()=>{navigation.navigate("Tab")}}/> 
-                <ComponentButtonInterface title="Remover" type="fourth" onPressI={()=>navigation.navigate("Cadastrar")}/>
+                <View style={styles.buttonRow}>
+                    <ComponentButtonSalvar title="Remover" type="fourth" onPressI={()=>navigation.navigate("Cadastrar")}/>
+                    <ComponentButtonSalvar title="Editar" type="secondary" onPressI={()=>{navigation.navigate("Tab")}}/> 
+                </View>
                 <View style={styles.button}>
                 <Entypo name="plus" size={24} color="black" /> 
-                <ComponentButtonDenuncia onPress={()=>{navigation.navigate("CadastroDenuncias")}} />
+                <ComponentButtonDenuncia onPress={()=>{navigation.navigate("CadastroDenuncias")}}>
+                    <View style={styles.icone}>
+                    <Entypo name="plus" size={28} color="yellow" />
+                    </View>
+                </ComponentButtonDenuncia>
                 </View>
             </KeyboardAvoidingView>
         </View>

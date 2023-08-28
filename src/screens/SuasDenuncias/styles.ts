@@ -10,6 +10,11 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         color: colors.black
     },
+    buttonRow:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
     formRow: {
         margin: 10,
         flexDirection:"row",
@@ -36,6 +41,9 @@ export const styles = StyleSheet.create({
         alignItems: 'flex-end',
         justifyContent: 'flex-end',
         padding: 389,
+    },
+    icone: {
+        padding: 21
     }
 })
 export default styles
