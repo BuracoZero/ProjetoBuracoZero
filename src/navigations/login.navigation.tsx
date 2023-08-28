@@ -7,7 +7,7 @@ type LoginStackParamList = {
   Cadastrar: undefined
   SuasDenuncias: undefined
   CadastroDenuncias: undefined
-  Tab: undefined
+  BuracoZer0: undefined
   Mapa: undefined
   Camera: undefined
 };
@@ -20,7 +20,7 @@ export function LoginNavigation() {
   const Stack = createStackNavigator<LoginStackParamList>();
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Tab" component={TabNavigation} />
+      <Stack.Screen name="BuracoZer0" component={TabNavigation} />
       <Stack.Screen name="Login" component={ScreenLogin} />
       <Stack.Screen name="Cadastrar" component={ScreenCadastrar} />
       <Stack.Screen name="Mapa" component={ScreenMapa} />

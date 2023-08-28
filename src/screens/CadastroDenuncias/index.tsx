@@ -45,8 +45,8 @@ export function CadastroDenuncias({navigation}:LoginTypes) {
           <MaterialCommunityIcons name="camera-plus-outline" size={40} color="black" onPress={() => navigation.navigate("Camera")}/>
           <Text>Escolha uma imagem</Text>
           <View style={styles.buttonRow}>
-                    <ComponentButtonSalvar title="Cancelar" type="fourth" onPressI={()=>navigation.navigate("Cadastrar")}/>
-                    <ComponentButtonSalvar title="Salvar" type="secondary" onPressI={()=>{navigation.navigate("Tab")}}/> 
+                    <ComponentButtonSalvar title="Cancelar" type="fourth" onPressI={()=>navigation.navigate("SuasDenuncias")}/>
+                    <ComponentButtonSalvar title="Salvar" type="secondary" onPressI={()=>{navigation.navigate("SuasDenuncias")}}/> 
                 </View>
         </View>
   )

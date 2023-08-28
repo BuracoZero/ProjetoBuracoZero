@@ -14,8 +14,8 @@ export function SuasDenuncias({navigation}:LoginTypes) {
             <KeyboardAvoidingView>
                 <Text style={styles.title}>Suas Denúncias</Text>
                 <View style={styles.buttonRow}>
-                    <ComponentButtonSalvar title="Remover" type="fourth" onPressI={()=>navigation.navigate("Cadastrar")}/>
-                    <ComponentButtonSalvar title="Editar" type="secondary" onPressI={()=>{navigation.navigate("Tab")}}/> 
+                    <ComponentButtonSalvar title="Remover" type="fourth" onPressI={()=>navigation.navigate("SuasDenuncias")}/>
+                    <ComponentButtonSalvar title="Editar" type="secondary" onPressI={()=>navigation.navigate("CadastroDenuncias")}/> 
                 </View>
                 <View style={styles.button}>
                 <Entypo name="plus" size={24} color="black" /> 

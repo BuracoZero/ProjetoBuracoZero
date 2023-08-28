@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
         alignItems: 'flex-end',
         justifyContent: 'flex-end',
         padding: 389,
-        marginVertical: 80,
+        marginVertical: 130,
     },
     icone: {
         padding: 21

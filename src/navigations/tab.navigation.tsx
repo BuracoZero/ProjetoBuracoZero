@@ -29,21 +29,24 @@ export function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <FontAwesome5 name="map-marked-alt" size={24} color="white" />
-          )
+          ),
+          headerShown: false, 
         }}
       />
       <Tab.Screen name="SuasDenuncias" component={ScreenSuasDenuncias} 
         options={{
           tabBarIcon: () => (
             <FontAwesome5 name="journal-whills" size={24} color="white" />
-          )
+          ),
+          headerShown: false, 
         }}
       />
       <Tab.Screen name="Login" component={ScreenLogin} 
         options={{
           tabBarIcon: () => (
-          <Ionicons name='person' color={colors.white} size={24} />
-          )
+            <Ionicons name='person' color={colors.white} size={24} />
+          ),
+          headerShown: false, 
         }}
       />
        
