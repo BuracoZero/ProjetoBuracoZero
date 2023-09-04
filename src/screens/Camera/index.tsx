@@ -77,25 +77,16 @@ export function ScreenCamera() {
       return (
       <>
         <View style={styles.container}>
-            {takePhoto ? (
-              <>
                 <TouchableOpacity onPress={toggleCameraType} style={styles.button}>
                   <Entypo name="cycle" size={42} color="white" />
                 </TouchableOpacity>
                 <Camera style={styles.camera} type={type} ref={ref} />
                 <ComponentButtonTakePicture onPress={takePicture} />
-        
-              </>
-            ) : (
-              <>
-                <ComponentButtonInterface title="Tirar foto" type="primary" onPressI={() => setTakePhoto(true)} />
+                
                 {photo && photo.uri && (
-                  <>
-                    <Image source={{ uri: photo.uri }} style={styles.img} />
-                    <ComponentButtonInterface title="Salvar imagem" type="primary" onPressI={savePhoto} />
-                  </>
-                )}
-                <ComponentButtonInterface title="Abrir imagem" type="primary" onPressI={pickImage} />
+              <>
+                <Image source={{ uri: photo.uri }} style={styles.img} />
+                <ComponentButtonInterface title="Enviar imagem" type="primary" onPressI={savePhoto} />
               </>
             )}
     
