@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
         color: colors.black
     },
     buttonRow:{
+        padding: 5,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between'

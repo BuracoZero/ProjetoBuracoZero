@@ -7,8 +7,9 @@ import { ComponentButtonInterface, ComponentButtonTakePicture } from '../../comp
 import { styles } from './styles';
 import * as MediaLibrary from 'expo-media-library';
 import * as ImagePicker from 'expo-image-picker';
+import { LoginTypes } from '../../navigations/login.navigation';
 
-export function ScreenCamera() {
+export function ScreenCamera({navigation}:LoginTypes) {
     const [type, setType] = useState(CameraType.back);
     const [permissionCamera, requestPermissionCamera] = Camera.useCameraPermissions()
     const [photo, setPhoto] = useState<CameraCapturedPicture | ImagePicker.ImagePickerAsset>()
@@ -86,7 +87,7 @@ export function ScreenCamera() {
                 {photo && photo.uri && (
               <>
                 <Image source={{ uri: photo.uri }} style={styles.img} />
-                <ComponentButtonInterface title="Enviar imagem" type="primary" onPressI={savePhoto} />
+                <ComponentButtonInterface title="Enviar imagem" type="primary" onPressI={()=>navigation.navigate("CadastroDenuncias")} />
               </>
             )}
     

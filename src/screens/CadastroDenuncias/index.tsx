@@ -9,6 +9,7 @@ import {LoginTypes} from "../../navigations/login.navigation"
 import { Camera, CameraCapturedPicture, CameraType,FaceDetectionResult } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library'
 import * as ImagePicker from 'expo-image-picker'
+import { MaskedTextInput } from "react-native-mask-text";
 
 
 
@@ -19,7 +20,12 @@ export function CadastroDenuncias({navigation}:LoginTypes) {
             <Text style={styles.title}>Cadastro de Denúncias</Text>
             <Text>Responda com base nas características do buraco:</Text>
             <View style={styles.formRow}>
-            <TextInput
+            <MaskedTextInput
+                    mask="99.999-99"
+                    onChangeText={(text, rawText) => {
+                      console.log(text);
+                      console.log(rawText);
+                    }}
                 placeholder="CEP"
                 placeholderTextColor={colors.black}
                 keyboardType="numeric"
