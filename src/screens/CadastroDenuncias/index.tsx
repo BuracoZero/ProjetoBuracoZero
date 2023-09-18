@@ -21,7 +21,7 @@ export function CadastroDenuncias({navigation}:LoginTypes) {
             <Text>Responda com base nas características do buraco:</Text>
             <View style={styles.formRow}>
             <MaskedTextInput
-                    mask="99.999-99"
+                    mask="99.999-999"
                     onChangeText={(text, rawText) => {
                       console.log(text);
                       console.log(rawText);
