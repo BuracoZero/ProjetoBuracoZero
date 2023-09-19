@@ -18,9 +18,9 @@ const AuthContext = createContext<IAuthContextData>({} as IAuthContextData);
 const AuthProvider = ({ children }: IProvider) => {
     const[auth, setAuth] = useState<IUserLogin>({} as IUserLogin);
 
-    const signIn= useCallback(async ({ email, password }: IAuthenticate)=> {
+    const signIn= useCallback(async ({ cpf, password }: IAuthenticate)=> {
         const response = await apiUser.login({
-            email,
+            cpf,
             password,
         });
         const user = response.data;

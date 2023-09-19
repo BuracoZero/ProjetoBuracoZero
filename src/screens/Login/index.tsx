@@ -18,7 +18,7 @@ export function Login({navigation}:LoginTypes) {
     async function handleSigIn() {
         try {
             setIsLoading(true);
-            if (data?.email && data.password) {
+            if (data?.cpf && data.password) {
                 await signIn(data);
             }else{
                 Alert.alert("Preencha todos os campos!!!");
@@ -66,6 +66,7 @@ export function Login({navigation}:LoginTypes) {
                     secureTextEntry={true}
                     autoCapitalize="none"
                     style={styles.input}
+                    onChangeText={(i)=> handleChange({ password: i })}
                     />
                 </View>
                 <ComponentButtonInterface title="Entrar" type="secondary" onPressI={handleSigIn}/>

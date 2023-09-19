@@ -1,17 +1,17 @@
 import { api } from '../../api'
 export interface IRegister {
     name?: string
-    email?:string
+    cpf?:string
     password?: string
 }
 export interface IAuthenticate {
-    email?: string
+    cpf?: string
     password?: string
 }
 export interface IUser {
     id: number
     name: string
-    email: string
+    cpf: string
 }
 export interface IUserLogin {
     user: IUser

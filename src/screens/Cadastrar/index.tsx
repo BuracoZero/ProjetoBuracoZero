@@ -24,7 +24,7 @@ export function Cadastrar({navigation}:LoginTypes) {
     async function handleRegister() {
         try {
             setIsLoading(true)
-            if(data?.name && data.email && data.password){
+            if(data?.name && data.cpf && data.password){
                 const response = await apiUser.register(data)
                 Alert.alert(`${response.data.name} cadastrado(a)!!!`)
                 navigation.navigate('Login')
@@ -67,16 +67,14 @@ export function Cadastrar({navigation}:LoginTypes) {
                     placeholder="Nome"
                     placeholderTextColor={colors.black}
                     style={styles.input}
+                    onChangeText={(i)=> handleChange({ name: i })}
                     />
                 </View>
                 <View style={styles.formRow}>
                 <AntDesign name="idcard" size={24} color="black" />
                 <MaskedTextInput
                     mask="999.999.999-99"
-                    onChangeText={(text, rawText) => {
-                      console.log(text);
-                      console.log(rawText);
-                    }}
+                    onChangeText={(i)=> handleChange({ cpf: i })}
                     placeholder="CPF"
                     placeholderTextColor={colors.black}
                     keyboardType="numeric"
@@ -92,6 +90,7 @@ export function Cadastrar({navigation}:LoginTypes) {
                     secureTextEntry={true}
                     autoCapitalize="none"
                     style={styles.input}
+                    onChangeText={(i)=> handleChange({ password: i })}
                     />
                 </View>
                 <ComponentButtonInterface title="Salvar" type="secondary" onPressI={handleRegister}/>
