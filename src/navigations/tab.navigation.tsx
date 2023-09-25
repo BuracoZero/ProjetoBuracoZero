@@ -1,6 +1,6 @@
 import React from 'react';
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {ScreenLogin, ScreenMapa, ScreenSuasDenuncias, ScreenCadastrar} from "../screens"
+import {ScreenLogin, ScreenMapa, ScreenSuasDenuncias, ScreenCadastrar, ScreenPerfil} from "../screens"
 import { colors } from '../styles/colors';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 type TabParamList ={
@@ -10,6 +10,7 @@ type TabParamList ={
   SuasDenuncias: undefined
   CadastroDenuncias: undefined
   Camera: undefined
+  Perfil: undefined
 }
 type TabScreenNavigationProp = BottomTabNavigationProp<TabParamList, 'Login'>
 export type TabTypes = {
@@ -30,7 +31,6 @@ export function TabNavigation() {
           tabBarIcon: () => (
             <FontAwesome5 name="map-marked-alt" size={24} color="white" />
           ),
-          headerShown: false, 
         }}
       />
       <Tab.Screen name="SuasDenuncias" component={ScreenSuasDenuncias} 
@@ -38,15 +38,13 @@ export function TabNavigation() {
           tabBarIcon: () => (
             <FontAwesome5 name="journal-whills" size={24} color="white" />
           ),
-          headerShown: false, 
         }}
       />
-      <Tab.Screen name="Login" component={ScreenLogin} 
+      <Tab.Screen name="Perfil" component={ScreenPerfil} 
         options={{
           tabBarIcon: () => (
             <Ionicons name='person' color={colors.white} size={24} />
           ),
-          headerShown: false, 
         }}
       />
        

@@ -5,10 +5,10 @@ import { AntDesign, Ionicons, Entypo } from '@expo/vector-icons';
 import { colors } from "../../styles/colors";
 import {TextInput} from "react-native-gesture-handler";
 import { ComponentButtonDenuncia, ComponentButtonInterface, ComponentButtonSalvar } from "../../components";
-import {LoginTypes} from "../../navigations/login.navigation"
+import {DenunciaTypes} from "../../navigations/denuncias.navigation"
 
 
-export function SuasDenuncias({navigation}:LoginTypes) {
+export function SuasDenuncias({navigation}:DenunciaTypes) {
     return (
         <View style={styles.container}>
             <KeyboardAvoidingView>

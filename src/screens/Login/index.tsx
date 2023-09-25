@@ -47,10 +47,7 @@ export function Login({navigation}:LoginTypes) {
                 <AntDesign name="idcard" size={24} color="black" />
                 <MaskedTextInput
                     mask="999.999.999-99"
-                    onChangeText={(text, rawText) => {
-                      console.log(text);
-                      console.log(rawText);
-                    }}
+                    onChangeText={(i)=> handleChange({ cpf: i })}
                     placeholder="CPF"
                     placeholderTextColor={colors.black}
                     keyboardType="numeric"
