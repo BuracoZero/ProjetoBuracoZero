@@ -5,7 +5,7 @@ import { AntDesign, Ionicons, Entypo } from '@expo/vector-icons';
 import { colors } from "../../styles/colors";
 import {TextInput} from "react-native-gesture-handler";
 import { ComponentButtonDenuncia, ComponentButtonInterface, ComponentButtonSalvar } from "../../components";
-import {DenunciaTypes} from "../../navigations/denuncias.navigation"
+import { DenunciaTypes } from "../../navigations/denuncias.navigation"
 
 
 export function SuasDenuncias({navigation}:DenunciaTypes) {
@@ -18,7 +18,7 @@ export function SuasDenuncias({navigation}:DenunciaTypes) {
                 </View>
                 <View style={styles.button}>
                 <Entypo name="plus" size={24} color="black" /> 
-                <ComponentButtonDenuncia onPress={()=>{navigation.navigate("CadastroDenuncias")}}>
+                <ComponentButtonDenuncia onPress={()=>navigation.navigate("CadastroDenuncias")}>
                     <View style={styles.icone}>
                     <Entypo name="plus" size={28} color="yellow" />
                     </View>
