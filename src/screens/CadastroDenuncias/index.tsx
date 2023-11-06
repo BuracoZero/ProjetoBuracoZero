@@ -11,8 +11,13 @@ import { Camera, CameraCapturedPicture, CameraType,FaceDetectionResult } from 'e
 import * as MediaLibrary from 'expo-media-library'
 import * as ImagePicker from 'expo-image-picker'
 import { MaskedTextInput } from "react-native-mask-text";
+import { IDenuncia } from "../SuasDenuncias";
 
 export function CadastroDenuncias({navigation}:DenunciaTypes) {
+  const [data, setdata] = useState<IDenuncia>()
+  function handleChange(item: IDenuncia) {
+    setdata({...data, ...item})
+  }
   return (
     <View style={styles.container}>
         <KeyboardAvoidingView>
@@ -37,6 +42,7 @@ export function CadastroDenuncias({navigation}:DenunciaTypes) {
                 placeholder="Endereço completo"
                 placeholderTextColor={colors.black}
                 style={styles.input}
+                onChangeText={(i)=> handleChange({endereco: i})}
                 />
             </View>
             <View style={styles.form}>
@@ -44,6 +50,7 @@ export function CadastroDenuncias({navigation}:DenunciaTypes) {
                 placeholder="Descrição do buraco"
                 placeholderTextColor={colors.black}
                 style={styles.input}
+                onChangeText={(i)=> handleChange({descricao: i})}
                 />
             </View>
           </KeyboardAvoidingView>
