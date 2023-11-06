@@ -6,14 +6,13 @@ import { colors } from "../../styles/colors";
 import {TextInput} from "react-native-gesture-handler";
 import { ComponentButtonInterface, ComponentButtonSalvar } from "../../components";
 import {LoginTypes} from "../../navigations/login.navigation"
+import {DenunciaTypes} from "../../navigations/denuncias.navigation"
 import { Camera, CameraCapturedPicture, CameraType,FaceDetectionResult } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library'
 import * as ImagePicker from 'expo-image-picker'
 import { MaskedTextInput } from "react-native-mask-text";
 
-
-
-export function CadastroDenuncias({navigation}:LoginTypes) {
+export function CadastroDenuncias({navigation}:DenunciaTypes) {
   return (
     <View style={styles.container}>
         <KeyboardAvoidingView>
@@ -52,7 +51,7 @@ export function CadastroDenuncias({navigation}:LoginTypes) {
           <Text>Escolha uma imagem</Text>
           <View style={styles.buttonRow}>
                     <ComponentButtonSalvar title="Cancelar" type="fourth" onPressI={()=>navigation.navigate("SuasDenuncias")}/>
-                    <ComponentButtonSalvar title="Salvar" type="secondary" onPressI={()=>{navigation.navigate("SuasDenuncias")}}/> 
+                    <ComponentButtonSalvar title="Salvar" type="secondary" onPressI={()=>navigation.navigate("SuasDenuncias")}/> 
                 </View>
         </View>
   )

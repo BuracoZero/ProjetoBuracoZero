@@ -25,9 +25,8 @@ export function Perfil({navigation}:TabTypes){
                 <ComponentLoading />
             ) : (
                 <View style={styles.container}>
-                    <TouchableOpacity onPress={handleVoltar}>
-                        <Text>Voltar</Text>
-                    </TouchableOpacity>
+                    <Text style={styles.title}>Perfil do Usuário</Text>
+                    <ComponentButtonInterface title="Sair" type="secondary" onPressI={handleVoltar}/>
                 </View>
             )}   
         </>
