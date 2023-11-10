@@ -10,9 +10,9 @@ import { apiDenuncia } from "../../services/data";
 
 export interface IDenuncia {
     id?:number
-    cep: string
-    endereco: string
-    descricao: string
+    cep?: string
+    endereco?: string
+    descricao?: string
 }
 export function SuasDenuncias({navigation}:DenunciaTypes) {
     const [data, setData] = useState<IDenuncia[]>()

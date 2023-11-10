@@ -3,11 +3,12 @@ import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-naviga
 import {ScreenLogin, ScreenMapa, ScreenSuasDenuncias, ScreenCadastrar, ScreenPerfil} from "../screens"
 import { colors } from '../styles/colors';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
+import { DenunciasNavigation } from './denuncias.navigation';
 type TabParamList ={
   Login: undefined
   Mapa: undefined
   Cadastrar: undefined
-  SuasDenuncias: undefined
+  NavSuasDenuncias: undefined
   CadastroDenuncias: undefined
   Camera: undefined
   Perfil: undefined
@@ -23,7 +24,8 @@ export function TabNavigation() {
       screenOptions={{
         tabBarInactiveBackgroundColor:colors.third,
         tabBarActiveBackgroundColor: colors.primary, 
-        tabBarActiveTintColor: colors.white
+        tabBarActiveTintColor: colors.white,
+        headerShown: false
       }}
     >
       <Tab.Screen name="Mapa" component={ScreenMapa}
@@ -33,7 +35,7 @@ export function TabNavigation() {
           ),
         }}
       />
-      <Tab.Screen name="SuasDenuncias" component={ScreenSuasDenuncias} 
+      <Tab.Screen name="NavSuasDenuncias" component={DenunciasNavigation} 
         options={{
           tabBarIcon: () => (
             <FontAwesome5 name="journal-whills" size={24} color="white" />

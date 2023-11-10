@@ -12,9 +12,26 @@ import * as MediaLibrary from 'expo-media-library'
 import * as ImagePicker from 'expo-image-picker'
 import { MaskedTextInput } from "react-native-mask-text";
 import { IDenuncia } from "../SuasDenuncias";
+import { apiDenuncia } from "../../services/data";
+import { AxiosError } from "axios";
 
 export function CadastroDenuncias({navigation}:DenunciaTypes) {
   const [data, setdata] = useState<IDenuncia>()
+  const [loading, setLoading] = useState()
+  async function handleSubmit(){
+    try{
+      if(data?.cep && data.endereco && data.descricao) {
+        // await apiDenuncia.store(data)
+        Alert.alert("Denuncia cadastrada")
+        navigation.navigate("SuasDenuncias")
+      }else{
+        Alert.alert("Preencha todos os campos!")
+      }
+    }catch(error){
+      const err = error as AxiosError
+      Alert.alert(err.response?.data as string)
+    }
+  }
   function handleChange(item: IDenuncia) {
     setdata({...data, ...item})
   }
@@ -26,10 +43,7 @@ export function CadastroDenuncias({navigation}:DenunciaTypes) {
             <View style={styles.formRow}>
             <MaskedTextInput
                     mask="99999-999"
-                    onChangeText={(text, rawText) => {
-                      console.log(text);
-                      console.log(rawText);
-                    }}
+                    onChangeText={(i)=> handleChange({ cep: i })}
                 placeholder="CEP"
                 placeholderTextColor={colors.black}
                 keyboardType="numeric"
@@ -58,7 +72,7 @@ export function CadastroDenuncias({navigation}:DenunciaTypes) {
           <Text>Escolha uma imagem</Text>
           <View style={styles.buttonRow}>
                     <ComponentButtonSalvar title="Cancelar" type="fourth" onPressI={()=>navigation.navigate("SuasDenuncias")}/>
-                    <ComponentButtonSalvar title="Salvar" type="secondary" onPressI={()=>navigation.navigate("SuasDenuncias")}/> 
+                    <ComponentButtonSalvar title="Salvar" type="secondary" onPressI={handleSubmit}/> 
                 </View>
         </View>
   )

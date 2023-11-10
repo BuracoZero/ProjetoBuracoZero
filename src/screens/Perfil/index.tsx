@@ -26,6 +26,8 @@ export function Perfil({navigation}:TabTypes){
             ) : (
                 <View style={styles.container}>
                     <Text style={styles.title}>Perfil do Usuário</Text>
+                    <Text style={styles.title}>{user?.user.name}</Text>
+                    <Text style={styles.title}>{user?.user.cpf}</Text>
                     <ComponentButtonInterface title="Sair" type="secondary" onPressI={handleVoltar}/>
                 </View>
             )}   
