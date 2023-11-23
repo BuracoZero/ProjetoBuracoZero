@@ -3,12 +3,8 @@ import { colors } from '../../styles/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-      
-    },
-    dentro:{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'stretch'
+        alignItems: "center",
+        justifyContent: "center"
     },
     title:{
         fontSize: 30,
@@ -21,7 +17,7 @@ export const styles = StyleSheet.create({
         flexDirection:"row",
         alignItems: "center",
         borderWidth: 1,
-        borderColor: colors.primary,
+        borderColor: colors.third,
         borderRadius: 5
         
 
@@ -37,6 +33,13 @@ export const styles = StyleSheet.create({
         padding: 10,
         width: "70%"
 
+    },
+    panel: {
+        flex: 1,
+        marginTop: 40,
+        margin: 20,
+        borderRadius: 20,
+        backgroundColor: colors.secondary
     }
 })
 export default styles

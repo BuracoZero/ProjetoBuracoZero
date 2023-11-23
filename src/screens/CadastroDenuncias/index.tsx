@@ -21,9 +21,9 @@ export function CadastroDenuncias({navigation}:DenunciaTypes) {
   async function handleSubmit(){
     try{
       if(data?.cep && data.endereco && data.descricao) {
-        // await apiDenuncia.store(data)
+        await apiDenuncia.store(data)
         Alert.alert("Denuncia cadastrada")
-        navigation.navigate("SuasDenuncias")
+        navigation.navigate("Denuncias")
       }else{
         Alert.alert("Preencha todos os campos!")
       }
@@ -71,7 +71,7 @@ export function CadastroDenuncias({navigation}:DenunciaTypes) {
           <MaterialCommunityIcons name="camera-plus-outline" size={40} color="black" onPress={() => navigation.navigate("Camera")}/>
           <Text>Escolha uma imagem</Text>
           <View style={styles.buttonRow}>
-                    <ComponentButtonSalvar title="Cancelar" type="fourth" onPressI={()=>navigation.navigate("SuasDenuncias")}/>
+                    <ComponentButtonSalvar title="Cancelar" type="fourth" onPressI={()=>navigation.navigate("Denuncias")}/>
                     <ComponentButtonSalvar title="Salvar" type="secondary" onPressI={handleSubmit}/> 
                 </View>
         </View>

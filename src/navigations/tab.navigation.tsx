@@ -4,11 +4,12 @@ import {ScreenLogin, ScreenMapa, ScreenSuasDenuncias, ScreenCadastrar, ScreenPer
 import { colors } from '../styles/colors';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 import { DenunciasNavigation } from './denuncias.navigation';
+import { PerfilNavigation } from './perfil.navigation';
 type TabParamList ={
   Login: undefined
   Mapa: undefined
   Cadastrar: undefined
-  NavSuasDenuncias: undefined
+  SuasDenuncias: undefined
   CadastroDenuncias: undefined
   Camera: undefined
   Perfil: undefined
@@ -35,14 +36,14 @@ export function TabNavigation() {
           ),
         }}
       />
-      <Tab.Screen name="NavSuasDenuncias" component={DenunciasNavigation} 
+      <Tab.Screen name="SuasDenuncias" component={DenunciasNavigation} 
         options={{
           tabBarIcon: () => (
             <FontAwesome5 name="journal-whills" size={24} color="white" />
           ),
         }}
       />
-      <Tab.Screen name="Perfil" component={ScreenPerfil} 
+      <Tab.Screen name="Perfil" component={PerfilNavigation} 
         options={{
           tabBarIcon: () => (
             <Ionicons name='person' color={colors.white} size={24} />
